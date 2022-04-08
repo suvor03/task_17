@@ -13,10 +13,11 @@ public class Main {
         int [] data = inputIntArray(size);
         System.out.println(Arrays.toString(data));
 
-        String[] fixed = inputBooleanArray(size);
+        Boolean[] fixed = inputBooleanArray(size);
         System.out.println(Arrays.toString(fixed));
 
-        MyBubbleSorting.sort(data, fixed);
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(MyBubbleSorting.sort(data, fixed)));
     }
 
     private static int[] inputIntArray(int size) {
@@ -32,14 +33,14 @@ public class Main {
         return array;
     }
 
-    private static String[] inputBooleanArray(int size) {
+    private static Boolean[] inputBooleanArray(int size) {
         Scanner scan = new Scanner(System.in);
 
-        String[] arr = new String[size];
+        Boolean[] arr = new Boolean[size];
         System.out.println("Insert array elements(True or False):");
 
         for (int i = 0; i < size; i++) {
-            arr[i] = scan.next();
+            arr[i] = Boolean.valueOf(scan.next());
         }
 
         return arr;
